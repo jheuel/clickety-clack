@@ -1,0 +1,27 @@
+---
+# yamllint disable rule:line-length
+
+name: renovate
+
+on:  # yamllint disable-line rule:truthy
+  schedule:
+    - cron: 0 */6 * * 1-5
+  push:
+    branches:
+      - main
+
+jobs:
+  renovate:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@cf5954a2aac7999882d3de4e462499adde159d04  # v41.0.17
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+          env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL|GITHUB_COM_TOKEN)$"
+        env:
+          LOG_LEVEL: "info"
+          RENOVATE_PLATFORM: "github"
+          RENOVATE_REPOSITORIES: jheuel/clickety-clack

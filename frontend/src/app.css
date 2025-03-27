@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@base {
+	@apply font-sans antialiased;
+
+	h1 {
+		@apply text-3xl font-bold;
+	}
+}
