@@ -1,3 +1,5 @@
+---
+  
 # yamllint disable rule:line-length
 name: renovate
 on: # yamllint disable-line rule:truthy
