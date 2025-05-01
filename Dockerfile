@@ -1,5 +1,5 @@
 # Stage 1: Build the Svelte frontend
-FROM denoland/deno:2.2.12@sha256:3d2544db9ba1a213194cb828eb0ffc211a12fcaf2d25c88d15020cb42dfd4722 as frontend-builder
+FROM denoland/deno:2.3.1@sha256:c75db9474ed7bfc24a4b0aa946767ee4a84a30034c188ce55078a591477d5f3e as frontend-builder
 
 WORKDIR /app/frontend
 COPY ./frontend .
@@ -7,7 +7,7 @@ RUN deno install
 RUN deno task build
 
 # Stage 2: Build the Go backend
-FROM golang:1.24.2@sha256:3a060d683c28fbb21d7fe8966458e084a6d7ebfb1f3ef3fd901abd2083c43675 as backend-builder
+FROM golang:1.24.2@sha256:30baaea08c5d1e858329c50f29fe381e9b7d7bced11a0f5f1f69a1504cdfbf5e as backend-builder
 
 WORKDIR /app/backend
 COPY ./backend .

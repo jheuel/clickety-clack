@@ -1,21 +1,19 @@
 name: Frontend
 on: [push]
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - name: Clone repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-
       - name: Install Deno
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-
       - name: Build step
         run: |
-          cd frontend
           deno install
           deno task build

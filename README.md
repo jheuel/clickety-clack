@@ -20,7 +20,7 @@ This project consists of a Go backend and a Svelte frontend, containerized using
 ``` bash
 git clone <repository-url>
 ```
-   
+
 2. Navigate to the project root directory:
 
 ``` bash
