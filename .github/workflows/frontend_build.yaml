@@ -14,7 +14,6 @@ jobs:
         with:
           deno-version: v2.x
       - name: Build step
-        working-directory: ./frontend
         run: |
           deno install
           deno task build
