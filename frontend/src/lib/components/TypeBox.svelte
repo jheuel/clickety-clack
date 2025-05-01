@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 
+	const { start_text = undefined } = $props();
+
 	let text: string | undefined = $state();
 
 	let cursorPosition = $state(-1);
@@ -154,7 +156,13 @@
 		return () => window.removeEventListener('resize', updateUnderline);
 	});
 
-	onMount(fetch_text);
+	onMount(() => {
+		if (start_text) {
+			text = start_text;
+		} else {
+			fetch_text();
+		}
+	});
 </script>
 
 <div class="relative mx-auto w-full max-w-2xl p-4">
@@ -163,8 +171,8 @@
 	{/if}
 	<button
 		bind:this={containerElement}
-		class="relative w-full rounded-lg border-2 border-gray-300 bg-gray-100 px-4 py-8
-           font-mono text-lg break-words dark:border-gray-700 dark:bg-gray-800"
+		class="relative w-full break-words rounded-lg border-2 border-gray-300 bg-gray-100 px-4
+           py-8 font-mono text-lg dark:border-gray-700 dark:bg-gray-800"
 		onclick={() => inputElement.focus()}
 	>
 		{#if text !== undefined}

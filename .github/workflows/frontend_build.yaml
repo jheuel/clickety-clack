@@ -4,6 +4,9 @@ on: [push]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
 
     steps:
       - name: Clone repository
@@ -15,7 +18,7 @@ jobs:
           deno-version: v2.x
 
       - name: Build step
+        working-directory: ./frontend
         run: |
-          cd frontend
           deno install
           deno task build
