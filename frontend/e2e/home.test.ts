@@ -10,6 +10,6 @@ test('take screenshot of the main content', async ({ page }) => {
 	await page.goto(`/?start_text=${test_text}`);
 	const element = await page.locator('body > div > main > div');
 	await element.screenshot({
-		path: 'test_assets/main_content.jpeg',
+		path: 'playwright-report/main_content.jpeg',
 	});
 });
