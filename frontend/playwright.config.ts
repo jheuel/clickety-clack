@@ -6,5 +6,6 @@ export default defineConfig({
 		command: 'npm run dev',
 		port: 5173
 	},
+	reporter: 'html',
 	testDir: 'e2e'
 });
