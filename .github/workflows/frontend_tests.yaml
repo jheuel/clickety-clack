@@ -20,7 +20,7 @@ jobs:
         id: playwright-version
         run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package.json').devDependencies['@playwright/test'])")" | tee -a $GITHUB_ENV
       - name: Cache playwright binaries
-        uses: actions/cache@2f8e54208210a422b2efd51efaa6bd6d7ca8920f # v3
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4
         id: playwright-cache
         with:
           path: |
