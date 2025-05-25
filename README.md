@@ -10,7 +10,7 @@ This project consists of a Go backend and a Svelte frontend, containerized using
 ## Project Structure
 
 - `/backend`: Go server code
-- `/frontend`: Svelte frontend code using Deno
+- `/frontend`: Svelte frontend code using `bun`
 - `Dockerfile`: Multi-stage build configuration
 
 ## Building the Docker Image
@@ -35,7 +35,7 @@ docker build -t clickety-clack .
 
 This command creates an image named "clickety-clack" using the multi-stage Dockerfile, which:
 
-- Builds the Svelte frontend using Deno
+- Builds the Svelte frontend using `bun`
 - Compiles the Go backend using Go
 - Creates a lightweight Alpine-based final image
 

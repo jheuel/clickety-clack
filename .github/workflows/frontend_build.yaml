@@ -9,11 +9,8 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4
-      - name: Install Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
+      - uses: oven-sh/setup-bun@v2
       - name: Build step
         run: |
-          deno install
-          deno task build
+          bun install
+          bun run build
