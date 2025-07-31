@@ -1,5 +1,5 @@
 # Stage 1: Build the Svelte frontend
-FROM denoland/deno:2.4.2@sha256:467d41805c2f531a48f84dfcd1b4f9244b8ebdbd505f752011d6d1b7daacc489 as frontend-builder
+FROM denoland/deno:2.4.3@sha256:17c3312d47b525b71830527e7b54cd543bc16de6546982b760b0de4de957d463 as frontend-builder
 
 WORKDIR /app/frontend
 COPY ./frontend .
