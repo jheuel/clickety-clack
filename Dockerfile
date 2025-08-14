@@ -7,7 +7,7 @@ RUN deno install
 RUN deno task build
 
 # Stage 2: Build the Go backend
-FROM golang:1.24.6@sha256:61808652990bcaa6981db6a85ecd0099c8fa10a6d49c3bd40194c00b69917856 as backend-builder
+FROM golang:1.24.6@sha256:e155b5162f701b7ab2e6e7ea51cec1e5f6deffb9ab1b295cf7a697e81069b050 as backend-builder
 
 WORKDIR /app/backend
 COPY ./backend .
