@@ -19,7 +19,7 @@
 		"@sveltejs/adapter-static": "^3.0.8"
 	},
 	"devDependencies": {
-		"@playwright/test": "1.56.0",
+		"@playwright/test": "1.56.1",
 		"@eslint/compat": "1.4.0",
 		"@eslint/js": "9.37.0",
 		"@sveltejs/adapter-auto": "6.1.1",
